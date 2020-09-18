@@ -8,20 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cavalcanti.search.dto.GameDTO;
-import com.cavalcanti.search.services.GameService;
+import com.cavalcanti.search.entities.Game;
+import com.cavalcanti.search.repositories.GameRepository;
 
 @RestController
 @RequestMapping(value="/games")
 public class GameController {
- 
+
 	@Autowired
-	private GameService service;
-	
+	private GameRepository gameRepository;
 	 
 	@GetMapping
-	public ResponseEntity<List<GameDTO>> findAll(){
-		List<GameDTO> list = service.findAll();
+	public ResponseEntity<List<Game>> findAll(){
+		List<Game> list = gameRepository.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
