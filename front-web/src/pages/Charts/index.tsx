@@ -11,7 +11,8 @@ type PieChartData ={
     labels:string[];
     series: number[];
 }
-const BASE_URL = 'http://localhost:8080'
+
+const BASE_URL = 'https://sds1-igor.herokuapp.com'
 type BarChartData ={
     x:string;
     y: number;
